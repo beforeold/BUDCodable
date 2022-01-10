@@ -16,7 +16,7 @@ public struct JSONString<Base: Codable>: Codable {
         let container = try decoder.singleValueContainer()
         if let string = try? container.decode(String.self),
            let data = string.data(using: .utf8) {
-            self.wrappedValue = try LionCoderFactory.newJSONDecoder().decode(Base.self, from: data)
+            self.wrappedValue = try JSONDecoder().decode(Base.self, from: data)
             return
         }
         
