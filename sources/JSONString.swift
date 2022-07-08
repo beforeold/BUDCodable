@@ -25,7 +25,7 @@ public struct JSONString<Base: Codable>: Codable {
     
     public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
-        let data = try LionCoderFactory.newJSONEncoder().encode(wrappedValue)
+        let data = try JSONEncoder().encode(wrappedValue)
         if let string = String(data: data, encoding: .utf8) {
             try container.encode(string)
         }
