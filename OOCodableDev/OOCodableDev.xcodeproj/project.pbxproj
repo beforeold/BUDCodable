@@ -25,7 +25,7 @@
 
 /* Begin PBXFileReference section */
 		9475A77828B6F851003F90CF /* OOCodable */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = OOCodable; path = ..; sourceTree = "<group>"; };
-		94EE352928780A8700AFF786 /* TestJSONString */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestJSONString; sourceTree = BUILT_PRODUCTS_DIR; };
+		94EE352928780A8700AFF786 /* OOCodableDev */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OOCodableDev; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EE352C28780A8700AFF786 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,34 +60,36 @@
 			isa = PBXGroup;
 			children = (
 				9475A77728B6F851003F90CF /* Packages */,
-				94EE352B28780A8700AFF786 /* TestJSONString */,
+				94EE352B28780A8700AFF786 /* OOCodableDev */,
 				94EE352A28780A8700AFF786 /* Products */,
 				9475A77928B6F868003F90CF /* Frameworks */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		94EE352A28780A8700AFF786 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				94EE352928780A8700AFF786 /* TestJSONString */,
+				94EE352928780A8700AFF786 /* OOCodableDev */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		94EE352B28780A8700AFF786 /* TestJSONString */ = {
+		94EE352B28780A8700AFF786 /* OOCodableDev */ = {
 			isa = PBXGroup;
 			children = (
 				94EE352C28780A8700AFF786 /* main.swift */,
 			);
-			path = TestJSONString;
+			path = OOCodableDev;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		94EE352828780A8700AFF786 /* TestJSONString */ = {
+		94EE352828780A8700AFF786 /* OOCodableDev */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94EE353028780A8700AFF786 /* Build configuration list for PBXNativeTarget "TestJSONString" */;
+			buildConfigurationList = 94EE353028780A8700AFF786 /* Build configuration list for PBXNativeTarget "OOCodableDev" */;
 			buildPhases = (
 				94EE352528780A8700AFF786 /* Sources */,
 				94EE352628780A8700AFF786 /* Frameworks */,
@@ -97,12 +99,12 @@
 			);
 			dependencies = (
 			);
-			name = TestJSONString;
+			name = OOCodableDev;
 			packageProductDependencies = (
 				9475A77A28B6F868003F90CF /* OOCodable */,
 			);
 			productName = TestJSONString;
-			productReference = 94EE352928780A8700AFF786 /* TestJSONString */;
+			productReference = 94EE352928780A8700AFF786 /* OOCodableDev */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -120,7 +122,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 94EE352428780A8700AFF786 /* Build configuration list for PBXProject "TestJSONString" */;
+			buildConfigurationList = 94EE352428780A8700AFF786 /* Build configuration list for PBXProject "OOCodableDev" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -133,7 +135,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				94EE352828780A8700AFF786 /* TestJSONString */,
+				94EE352828780A8700AFF786 /* OOCodableDev */,
 			);
 		};
 /* End PBXProject section */
@@ -288,7 +290,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		94EE352428780A8700AFF786 /* Build configuration list for PBXProject "TestJSONString" */ = {
+		94EE352428780A8700AFF786 /* Build configuration list for PBXProject "OOCodableDev" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				94EE352E28780A8700AFF786 /* Debug */,
@@ -297,7 +299,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94EE353028780A8700AFF786 /* Build configuration list for PBXNativeTarget "TestJSONString" */ = {
+		94EE353028780A8700AFF786 /* Build configuration list for PBXNativeTarget "OOCodableDev" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				94EE353128780A8700AFF786 /* Debug */,
