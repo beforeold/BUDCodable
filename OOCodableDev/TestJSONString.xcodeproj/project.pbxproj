@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9475A77B28B6F868003F90CF /* OOCodable in Frameworks */ = {isa = PBXBuildFile; productRef = 9475A77A28B6F868003F90CF /* OOCodable */; };
 		94EE352D28780A8700AFF786 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EE352C28780A8700AFF786 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9475A77828B6F851003F90CF /* OOCodable */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = OOCodable; path = ..; sourceTree = "<group>"; };
 		94EE352928780A8700AFF786 /* TestJSONString */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestJSONString; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EE352C28780A8700AFF786 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,17 +34,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9475A77B28B6F868003F90CF /* OOCodable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9475A77728B6F851003F90CF /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				9475A77828B6F851003F90CF /* OOCodable */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		9475A77928B6F868003F90CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		94EE352028780A8700AFF786 = {
 			isa = PBXGroup;
 			children = (
+				9475A77728B6F851003F90CF /* Packages */,
 				94EE352B28780A8700AFF786 /* TestJSONString */,
 				94EE352A28780A8700AFF786 /* Products */,
+				9475A77928B6F868003F90CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +98,9 @@
 			dependencies = (
 			);
 			name = TestJSONString;
+			packageProductDependencies = (
+				9475A77A28B6F868003F90CF /* OOCodable */,
+			);
 			productName = TestJSONString;
 			productReference = 94EE352928780A8700AFF786 /* TestJSONString */;
 			productType = "com.apple.product-type.tool";
@@ -284,6 +307,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9475A77A28B6F868003F90CF /* OOCodable */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OOCodable;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 94EE352128780A8700AFF786 /* Project object */;
 }

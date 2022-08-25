@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import OOCodable
 
 struct Token: Codable {
     @JSONString var body: Body?
