@@ -49,6 +49,18 @@ extension SafeInt: Decodable {
     }
 }
 
+extension KeyedDecodingContainer {
+    func decode(
+        _ type: SafeInt.Type,
+        forKey key: Key
+    ) throws -> SafeInt {
+        guard let ret = try decodeIfPresent(type, forKey: key) else {
+            return SafeInt()
+        }
+        return ret
+    }
+}
+
 extension SafeInt: Encodable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()

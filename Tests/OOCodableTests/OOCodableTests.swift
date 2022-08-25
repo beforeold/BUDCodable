@@ -72,4 +72,22 @@ final class OOCodableTests: XCTestCase {
         testString()
         testDouble()
     }
+    
+    func testNullOrNil() {
+        struct Example: Codable {
+            @SafeInt var age
+        }
+        
+        let data = #"""
+{"age":null}
+"""#.data(using: .utf8)!
+        let example = try! JSONDecoder().decode(Example.self, from: data)
+        XCTAssertEqual(example.age, 0)
+        
+        let data2 = #"""
+{}
+"""#.data(using: .utf8)!
+        let example2 = try! JSONDecoder().decode(Example.self, from: data2)
+        XCTAssertEqual(example2.age, 0)
+    }
 }
