@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		94EE352D28780A8700AFF786 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EE352C28780A8700AFF786 /* main.swift */; };
-		94EE353428780AA100AFF786 /* JSONString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EE353328780AA100AFF786 /* JSONString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,7 +25,6 @@
 /* Begin PBXFileReference section */
 		94EE352928780A8700AFF786 /* TestJSONString */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestJSONString; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EE352C28780A8700AFF786 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		94EE353328780AA100AFF786 /* JSONString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONString.swift; path = ../../sources/JSONString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +57,6 @@
 		94EE352B28780A8700AFF786 /* TestJSONString */ = {
 			isa = PBXGroup;
 			children = (
-				94EE353328780AA100AFF786 /* JSONString.swift */,
 				94EE352C28780A8700AFF786 /* main.swift */,
 			);
 			path = TestJSONString;
@@ -123,7 +120,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94EE353428780AA100AFF786 /* JSONString.swift in Sources */,
 				94EE352D28780A8700AFF786 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

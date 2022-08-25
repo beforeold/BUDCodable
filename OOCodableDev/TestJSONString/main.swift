@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 struct Token: Codable {
     @JSONString var body: Body?
     // var body: String?
