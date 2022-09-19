@@ -39,3 +39,14 @@ extension EncodableWrapper: Encodable {
         try wrappedValue.encode(to: encoder)
     }
 }
+
+
+public extension EncodableWrapper {
+    static func wrap(array: [Encodable]) -> [EncodableWrapper] {
+        return array.map(Self.init)
+    }
+    
+    static func wrap<Key: Hashable>(dictionary: [Key: Encodable]) -> [Key: EncodableWrapper] {
+        return dictionary.mapValues(Self.init)
+    }
+}
