@@ -46,7 +46,7 @@ public extension EncodableWrapper {
         return array.map(Self.init)
     }
     
-    static func wrap<Key: Hashable>(dictionary: [Key: Encodable]) -> [Key: EncodableWrapper] {
+    static func wrap<Key>(dictionary: [Key: Encodable]) -> [Key: EncodableWrapper] {
         return dictionary.mapValues(Self.init)
     }
 }
