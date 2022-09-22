@@ -1,14 +1,15 @@
 //
-//  File.swift
+//  SafeDouble.swift
 //  
 //
-//  Created by beforeold on 2022/8/25.
+//  Created by beforeold on 2022/9/22.
 //
 
 import Foundation
 
+
 @propertyWrapper
-public struct SafeInt {
+public struct SafeDouble {
     public typealias Wrapped = Int
     public var wrappedValue: Wrapped = 0
     
@@ -21,19 +22,19 @@ public struct SafeInt {
     }
 }
 
-extension SafeInt: Decodable {
+extension SafeDouble: Decodable {
     public init(from decoder: Decoder) throws {
         guard let container = try? decoder.singleValueContainer() else {
             return
         }
         
-        if let int = try? container.decode(Int.self) {
-            self.wrappedValue = int
+        if let double = try? container.decode(Double.self) {
+            self.wrappedValue = Int(double)
             return
         }
         
-        if let double = try? container.decode(Double.self) {
-            self.wrappedValue = Int(double)
+        if let int = try? container.decode(Int.self) {
+            self.wrappedValue = int
             return
         }
         
@@ -51,23 +52,28 @@ extension SafeInt: Decodable {
             return
         }
     }
+    
+    private static func isTrue(string: String) -> Bool {
+        return string.hasPrefix("T") || string.hasPrefix("t")
+    }
 }
 
 extension KeyedDecodingContainer {
     func decode(
-        _ type: SafeInt.Type,
+        _ type: SafeDouble.Type,
         forKey key: Key
-    ) throws -> SafeInt {
+    ) throws -> SafeDouble {
         guard let ret = try decodeIfPresent(type, forKey: key) else {
-            return SafeInt()
+            return SafeDouble()
         }
         return ret
     }
 }
 
-extension SafeInt: Encodable {
+extension SafeDouble: Encodable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try? container.encode(self.wrappedValue)
     }
 }
+
