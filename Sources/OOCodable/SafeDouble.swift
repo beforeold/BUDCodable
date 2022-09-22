@@ -10,10 +10,9 @@ import Foundation
 
 @propertyWrapper
 public struct SafeDouble {
-    public typealias Wrapped = Int
-    public var wrappedValue: Wrapped = 0
+    public var wrappedValue: Double = 0
     
-    public init(wrappedValue: Wrapped) {
+    public init(wrappedValue: Double) {
         self.wrappedValue = wrappedValue
     }
     
@@ -28,25 +27,25 @@ extension SafeDouble: Decodable {
             return
         }
         
-        if let double = try? container.decode(Double.self) {
-            self.wrappedValue = Int(double)
+        if let val = try? container.decode(Double.self) {
+            self.wrappedValue = val
             return
         }
         
-        if let int = try? container.decode(Int.self) {
-            self.wrappedValue = int
+        if let val = try? container.decode(Int.self) {
+            self.wrappedValue = Double(val)
             return
         }
         
-        if let bool = try? container.decode(Bool.self) {
-            self.wrappedValue = bool ? 1 : 0
+        if let val = try? container.decode(Bool.self) {
+            self.wrappedValue = val ? 1 : 0
             return
         }
         
-        if let string = try? container.decode(String.self) {
-            if let int = Int(string) {
-                self.wrappedValue = int
-            } else if StringUitl.isTrue(string: string) {
+        if let val = try? container.decode(String.self) {
+            if let ret = Double(val) {
+                self.wrappedValue = ret
+            } else if StringUitl.isTrue(string: val) {
                 self.wrappedValue = 1
             }
             return
