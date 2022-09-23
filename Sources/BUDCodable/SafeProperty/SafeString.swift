@@ -67,8 +67,7 @@ extension KeyedDecodingContainer {
 
 extension SafeString: Encodable {
     public func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        try? container.encode(self.wrappedValue)
+        try wrappedValue.encode(to: encoder)
     }
 }
 
