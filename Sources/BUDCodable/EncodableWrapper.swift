@@ -42,13 +42,13 @@ public extension EncodableWrapper {
 }
 
 #if swift(>=5.7)
-extension Array where Element == any Encodable {
+public extension Array where Element == any Encodable {
     func encodableWrapped() -> [EncodableWrapper] {
         return map(EncodableWrapper.init)
     }
 }
 
-extension Dictionary where Value == any Encodable {
+public extension Dictionary where Value == any Encodable {
     func encodableWrapped() -> [Key: EncodableWrapper] {
         return mapValues(EncodableWrapper.init)
     }
