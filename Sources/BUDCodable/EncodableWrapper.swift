@@ -50,3 +50,18 @@ public extension EncodableWrapper {
         return dictionary.mapValues(Self.init)
     }
 }
+
+#if swift(>=5.7)
+extension Array where Element == any Encodable {
+    func wrapped() -> [EncodableWrapper] {
+        return map(EncodableWrapper.init)
+    }
+}
+
+extension Dictionary where Value == any Encodable {
+    func wrapped() -> [Key: EncodableWrapper] {
+        return mapValues(EncodableWrapper.init)
+    }
+}
+
+#endif
