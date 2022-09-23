@@ -1,7 +1,7 @@
 import XCTest
 @testable import BUDCodable
 
-final class OOCodableTests: XCTestCase {
+final class BUDCodableTests: XCTestCase {
     struct Example: Codable {
         @SafeInt var age
     }
