@@ -1,5 +1,5 @@
 import XCTest
-@testable import OOCodable
+@testable import BUDCodable
 
 final class OOCodableTests: XCTestCase {
     func testExample() throws {
