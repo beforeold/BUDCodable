@@ -13,23 +13,13 @@ import Foundation
 ///
 @propertyWrapper
 public struct EncodableWrapper {
-    private var value: Encodable
+    public var wrappedValue: Encodable
     
     public init(wrappedValue: Encodable) {
-        self.value = wrappedValue
+        self.wrappedValue = wrappedValue
     }
     
-    public var wrappedValue: Encodable {
-        set {
-            value = newValue
-        }
-        
-        get {
-            return value
-        }
-    }
-    
-    public var projectedValue: EncodableWrapper {
+    public var projectedValue: Self {
         return self
     }
 }
@@ -42,24 +32,24 @@ extension EncodableWrapper: Encodable {
 
 
 public extension EncodableWrapper {
-    static func wrap(array: [Encodable]) -> [EncodableWrapper] {
+    static func wrap(array: [Encodable]) -> [Self] {
         return array.map(Self.init)
     }
     
-    static func wrap<Key>(dictionary: [Key: Encodable]) -> [Key: EncodableWrapper] {
+    static func wrap<Key>(dictionary: [Key: Encodable]) -> [Key: Self] {
         return dictionary.mapValues(Self.init)
     }
 }
 
 #if swift(>=5.7)
 extension Array where Element == any Encodable {
-    func wrapped() -> [EncodableWrapper] {
+    func encodableWrapped() -> [EncodableWrapper] {
         return map(EncodableWrapper.init)
     }
 }
 
 extension Dictionary where Value == any Encodable {
-    func wrapped() -> [Key: EncodableWrapper] {
+    func encodableWrapped() -> [Key: EncodableWrapper] {
         return mapValues(EncodableWrapper.init)
     }
 }
