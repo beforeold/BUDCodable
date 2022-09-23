@@ -1,6 +1,16 @@
-# OOCodable
+# BUDCodable
 
 Useful extension for Swift Codable
+
+# Features
+## Support JSON String to Object
+
+
+## Support Safe property Wrapper
+
+
+## Support Encode Encodable Collection like array, dictionary
+
 
 **Artical**
 
