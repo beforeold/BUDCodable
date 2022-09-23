@@ -8,7 +8,7 @@
 import Foundation
 
 @propertyWrapper
-public struct SafeArray<T> where T: Decodable {
+public struct SafeArray<T> {
     public var wrappedValue: [T] = []
     
     public init(wrappedValue: [T]) {
@@ -20,7 +20,7 @@ public struct SafeArray<T> where T: Decodable {
     }
 }
 
-extension SafeArray: Decodable  {
+extension SafeArray: Decodable where T: Decodable {
     public init(from decoder: Decoder) throws {
         guard var unkeyedContainer = try? decoder.unkeyedContainer() else {
             return
@@ -64,15 +64,12 @@ extension SafeArray: Decodable  {
     }
 }
 
-extension KeyedDecodingContainer {
+public extension KeyedDecodingContainer {
     func decode<T>(
         _ type: SafeArray<T>.Type,
         forKey key: Key
-    ) throws -> SafeArray<T> {
-        guard let ret = try decodeIfPresent(type, forKey: key) else {
-            return SafeArray()
-        }
-        return ret
+    ) throws -> SafeArray<T> where T: Decodable {
+        try decodeIfPresent(type, forKey: key) ?? SafeArray()
     }
 }
 

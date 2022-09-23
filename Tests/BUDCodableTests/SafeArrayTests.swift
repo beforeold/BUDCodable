@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import BUDCodable
+@testable import BUDCodable
 
 class SafeArrayTests: XCTestCase {
     struct Example: Codable {
